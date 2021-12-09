@@ -62,8 +62,10 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.buildbutton("Report Group", "https://t.me/mltbbugsreport")
+    buttons.buildbutton("GdriveTalkGp", "https://t.me/drivetalk")
+    buttons.buildbutton("BotTutoChannel", "https://t.me/BotTutorialsMM")
+    buttons.buildbutton("YourLinkDrive", "https://drive.google.com/drive/folders/1eMnSGTADzFmCRuiBj4fec3xMjoe_MNXc?usp=sharing")
+    buttons.buildbutton("ဆက်သွယ်ရန်", "https://t.me/dr007bot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -166,27 +168,9 @@ help = telegraph.create_page(
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
-
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
-
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
-
-/{BotCommands.RestartCommand}: Restart and update the bot
-
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
-
-/{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
-
-/{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
+/mirror   ဒီcommand နဲ့  သင့်ရဲ့ url တွေကို Gdrive ကိုတင်လို့ရပါတယ်။ TgVideo,Cloud Links, torrent link, magnet link စသဖြင့်ပါ။
+/leech  ဒီ ဟာကတော့ မည်သည့် link မဆို telegram ကို video, file အဖြစ်တင်နိုင်ပါတယ်။ GoogleDrive link တွေ လဲ ဒါနဲ့တင်လို့ရပါတယ်။ Gdrive Folder လိုက်လဲ တင်လို့ရပါတယ်။
+/watch  ဒါကတော့ youtube link, playlist တွေကို Gdrive ကို တင်တာပါ။ တကယ်လို့ youtube link ကို telegram ကိုတင်ချင်ရင်  /leechwatch လို့သုံးပါ။
 '''
 
 def bot_help(update, context):
